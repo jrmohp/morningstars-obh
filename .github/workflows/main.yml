@@ -31,5 +31,5 @@ jobs:
         git remote add azure git@morningstars-obh.scm.azurewebsites.net:443/morningstars-obh.git
         git config --global user.email "mohapatra_jyoti@optum.com"
         git config --global user.name "morningstars"
-        git checkout main
-        git push -u azure main
+        git checkout master
+        git push -u azure master
