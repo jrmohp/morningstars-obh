@@ -15,23 +15,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  repo-sync:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
       with:
-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-    - name: Create local changes
-      run: |
-        ...
-    - name: Commit files
-      run: |
-        git config --local user.email "mohapatra_jyoti@optum.com"
-        git config --local user.name "morningstars-obh\$morningstars-obh"
-        git commit -m "Add changes" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+        fetch-depth: '0'
+        ref: 'master'
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
       with:
-        github_token: ${{ secrets.MORNING_STARS }}
-        repository: "https://morningstars-obh.scm.azurewebsites.net:443/morningstars-obh.git"
+         key: ${{ secrets.MORNING_STARS }}
+         name: morningstars-obh\$morningstars-obh
+    - run: |
+        git remote add azure git@https://morningstars-obh.scm.azurewebsites.net:443/morningstars-obh.git
+        git config --global user.email "mohapatra_jyoti@optum.com"
+        git config --global user.name "morningstars"
+        git checkout master
+        git push -u morningstars master
