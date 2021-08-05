@@ -28,7 +28,7 @@ jobs:
          name: morningstars-obh\$morningstars-obh
          known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - run: |
-        git remote add azure git@https://morningstars-obh.scm.azurewebsites.net:443/morningstars-obh.git
+        git remote add azure git@morningstars-obh.scm.azurewebsites.net:443/morningstars-obh.git
         git config --global user.email "mohapatra_jyoti@optum.com"
         git config --global user.name "morningstars"
         git checkout main
