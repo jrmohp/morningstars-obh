@@ -39,7 +39,7 @@ jobs:
       run: |
         # Build and test the project, then
         # deploy to Azure Web App.
-        npm install react-scripts bootstrap react-toastify react-router-dom react-dom --save
+        npm install create-react-app react-scripts bootstrap react-toastify react-router-dom react-dom  --save
         npm run build --if-present
         npm run test --if-present
     - name: 'Deploy to Azure WebApp'
