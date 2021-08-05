@@ -25,7 +25,7 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
          key: ${{ secrets.MORNING_STARS }}
-         name: morningstars-obh\$morningstars-obh
+         name: "morningstars"
          known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - run: |
         git remote add azure https://morningstars-obh.scm.azurewebsites.net:443/morningstars-obh.git
