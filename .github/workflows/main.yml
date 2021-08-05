@@ -32,4 +32,4 @@ jobs:
         git config --global user.email "mohapatra_jyoti@optum.com"
         git config --global user.name "morningstars"
         git checkout main
-        git push -u morningstars main
+        git push -u azure main
