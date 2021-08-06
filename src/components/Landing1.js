@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
+
+import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 
-const Landing = () => {
-    return (
-        <div className='col-md-6 shadow mx-auto p-5'>
+export default class Landing1 extends Component {
+
+    constructor(props) {
+        super(props)
+        const token = localStorage.getItem("token")
+        
+        let loggedin = true
+        if (token === '') {
+            loggedin = false
+        }
+
+        this.state = {
+            loggedin
+        }
+    }
+    render() {
+        if (!this.state.loggedin) {
+            return (<Redirect to=
+                '/'/>)
+        }
+        return (
+            <div className='col-md-6 shadow mx-auto p-5'>
             <div class="search-bar">
                 <input type="text" placeholder="Search"/>
                 <Link to='/provList'><button>SEARCH</button></Link>
@@ -47,7 +68,6 @@ const Landing = () => {
                 </div>
             </div>
         </div>
-    )
+        )
+    }
 }
-
-export default Landing
