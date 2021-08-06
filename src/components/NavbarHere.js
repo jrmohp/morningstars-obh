@@ -18,10 +18,11 @@ function NavbarHere() {
                     <Link to='/provList'><input type='button' value='Appointments' className='btn btn-outline-dark p-2'/></Link>
                 </Nav.Item>
                 <Nav.Item className='p-3'>
-                    <Link to='/logout'><input type='button' value='Log out' className='btn btn-outline-dark p-2'/></Link>
-                </Nav.Item>
-                <Nav.Item className='p-3'>
                     <Link to='/home'><input type='button' value='About us' className='btn btn-outline-dark p-2'/></Link>
+                </Nav.Item>
+
+                <Nav.Item className='p-3'>
+                    <Link to='/logout'><input type='button' value='Log out' className='btn btn-outline-dark p-2'/></Link>
                 </Nav.Item>
                 
             </nav>
