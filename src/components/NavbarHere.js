@@ -12,13 +12,13 @@ function NavbarHere() {
             <nav className='navbar navbar-expand-lg navbar-light py-2 justify-content-center' activeKey="/">
                 <img src={logo} class="navbar-img img-responsive " alt="logo"></img>
                 <Nav.Item className='p-3'>
-                    <Link to='/'><input type='button' value='Home' className='btn btn-outline-dark p-2'/></Link>
+                    <Link to='/home'><input type='button' value='Home' className='btn btn-outline-dark p-2'/></Link>
                 </Nav.Item>
                 <Nav.Item className='p-3'>
-                    <Link to='/'><input type='button' value='Appointments' className='btn btn-outline-dark p-2'/></Link>
+                    <Link to='/provList'><input type='button' value='Appointments' className='btn btn-outline-dark p-2'/></Link>
                 </Nav.Item>
                 <Nav.Item className='p-3'>
-                    <Link to='/'><input type='button' value='History' className='btn btn-outline-dark p-2'/></Link>
+                    <Link to='/home'><input type='button' value='History' className='btn btn-outline-dark p-2'/></Link>
                 </Nav.Item>
                 <Nav.Item className='p-3'>
                     <Link to='/'><input type='button' value='About us' className='btn btn-outline-dark p-2'/></Link>
